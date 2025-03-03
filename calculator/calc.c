@@ -29,8 +29,11 @@ int main(){
     //perform arithmetics
     result = calculate( num1, num2, op);
 
+    //display final equation
+    printf("Equation\n %.2f %c %.2f", num1, op, num2);
+
     //display results
-    printf("Answer: %.2f\n", result);
+    printf(" = %.2f\n", result);
 
     return 0;
 
