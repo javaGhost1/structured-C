@@ -55,5 +55,8 @@ int main(){
         printf("\nS.NO | STUDENT NAME       | REGNO       | CAT | EXAM | TOTAL | GRADE\n");
         printf("-----------------------------------------------------------------------\n");
 
+        for (i=0; i<5; i++) {
+            printf("%-5d %-20");
+        }
     }
 }
