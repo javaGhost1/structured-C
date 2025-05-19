@@ -5,6 +5,8 @@ struct Student {
     char regno[20];
     int cat;
     int exam;
+    int total;
+    int grade;
 };
 
 //function to calculate grade
@@ -45,8 +47,13 @@ int main(){
         scanf("%d", &students[i].exam);
 
         //calculate total marks
+        students[i].total = students[i].cat + students[i].exam;
+        //Grade the student
+        students[i].grade = calculateGrade(students[i].total);
         
-        
+        //Display results
+        printf("\nS.NO | STUDENT NAME       | REGNO       | CAT | EXAM | TOTAL | GRADE\n");
+        printf("-----------------------------------------------------------------------\n");
 
     }
 }
