@@ -33,6 +33,20 @@ int main(){
     for (i=0; i < 5; i++) {
         printf("\nEnter the details for Student %d:\n", i+1);
         printf("Name: ");
-        scanf(" %[^\n]", students[i].name);
+        scanf(" %[^\n]", &students[i].name);
+        //regno
+        printf("Registration No; ");
+        scanf("%s", &students[i].regno);
+        //cat marks
+        printf("CAT Marks: ");
+        scanf("%d", &students[i].cat);
+        //exam marks
+        printf("EXAM Marks: ");
+        scanf("%d", &students[i].exam);
+
+        //calculate total marks
+        
+        
+
     }
 }
