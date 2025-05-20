@@ -35,10 +35,10 @@ int main(){
     for (i=0; i < 5; i++) {
         printf("\nEnter the details for Student %d:\n", i+1);
         printf("Name: ");
-        scanf(" %[^\n]", &students[i].name);
-        //regno
-        printf("Registration No; ");
-        scanf("%s", &students[i].regno);
+        scanf(" %[^\n]", students[i].name); // Read full name
+        //registration number
+        printf("Reg No: ");
+        scanf(" %s", students[i].regno);
         //cat marks
         printf("CAT Marks: ");
         scanf("%d", &students[i].cat);
@@ -57,7 +57,7 @@ int main(){
         printf("-----------------------------------------------------------------------\n");
 
         for (i=0; i<5; i++) {
-            printf("%-5d %-20s %-4d %-5d %-5d %-6d %-5c\n",
+            printf("%-5d %-20s %-12s %-4d %-5d %-6d %-5c\n",
             i+1,
         students[i].name,
         students[i].regno,
