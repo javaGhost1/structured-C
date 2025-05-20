@@ -34,9 +34,7 @@ This C program allows users to enter student details (name, registration number,
 
 1    | Mary Ann Wanjiru   | SC101/001    | 27  | 63   | 90    | A
 2    | Brian Otieno       | SC101/002    | 25  | 45   | 70    | A
-3    | Zawadi Kimani      | SC101/003    | 18  | 39   | 57    | C
-4    | Daniel Kiprotich   | SC101/004    | 16  | 20   | 36    | F
-5    | Freeman The Coder  | SC101/005    | 29  | 38   | 67    | B
+
 
 
 ## 🧠 Concepts Practiced
@@ -52,10 +50,6 @@ This C program allows users to enter student details (name, registration number,
 - Search student by name or reg number
 
 
-
-Let’s gooo, Freeman! Here's the **sample output for `Student Result Manager`** formatted in clean and proper **`README.md`** style using Markdown code blocks for alignment.
-
----
 
 
 
