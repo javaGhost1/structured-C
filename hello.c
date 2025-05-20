@@ -13,7 +13,7 @@ int main () {
 	scanf(" %d", &number); // get integer input
 	printf("%s have entered the number Nine: %d\n", name, number);
 	
-	while (number > 0 and number < 9){
+	while (number > 0 || number < 9){
 		if (number <= 0) {
 			printf("Too low\n");
 		} else if (number < 9) {
