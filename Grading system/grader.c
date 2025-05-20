@@ -50,13 +50,21 @@ int main(){
         students[i].total = students[i].cat + students[i].exam;
         //Grade the student
         students[i].grade = calculateGrade(students[i].total);
+    }
         
         //Display results
         printf("\nS.NO | STUDENT NAME       | REGNO       | CAT | EXAM | TOTAL | GRADE\n");
         printf("-----------------------------------------------------------------------\n");
 
         for (i=0; i<5; i++) {
-            printf("%-5d %-20");
-        }
+            printf("%-5d %-20s %-4d %-5d %-5d %-6d %-5c\n",
+            i+1,
+        students[i].name,
+        students[i].regno,
+        students[i].cat,
+        students[i].exam,
+        students[i].total,
+        students[i].grade);
     }
+    return 0;
 }
