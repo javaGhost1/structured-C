@@ -28,10 +28,7 @@ This C program allows users to enter student details (name, registration number,
 - `grader.c`: Source code
 - `README.md`: This file
 
-```markdown
 ## 🧪 Sample Output
-
-```
 
 ## S.NO | STUDENT NAME       | REG NO       | CAT | EXAM | TOTAL | GRADE
 
@@ -41,10 +38,7 @@ This C program allows users to enter student details (name, registration number,
 4    | Daniel Kiprotich   | SC101/004    | 16  | 20   | 36    | F
 5    | Freeman The Coder  | SC101/005    | 29  | 38   | 67    | B
 
-```
-```
 
----
 ## 🧠 Concepts Practiced
 - Arrays
 - Structs
