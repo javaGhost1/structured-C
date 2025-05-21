@@ -143,10 +143,10 @@ void viewUnitsFromFile()
                         printf("\nUnits %d\n", count);
                         printf("Title       :   %s\n", temp.title);
                         printf("Code        :   %s\n", temp.code);
-                        printf("Day     :   %s\n",temp.day);
+                        printf("Day         :   %s\n", temp.day);
                         printf("Time        :   %s\n", temp.time);
                         printf("Venue       :   %s\n", temp.venue);
-                        printf("Lecturer        :   %s\n", temp.lecturerName);
+                        printf("Lecturer    :   %s\n", temp.lecturerName);
 
                     }
 
@@ -214,7 +214,7 @@ void manageClasses()
     // Add units
     do {
         printf("\n===== EduTracker =====\n");
-        printf("\n1. Add Unit\n2. View Units(Live)\n3. View Units 4. Edit Unit\n 5. Delete Unit\n6. Back\n");
+        printf("\n1. Add Unit\n2. View Units(Live) (3. View Units)\n4. Edit Unit\n5. Delete Unit\n6. Back\n");
         printf("Choose an option: ");
         scanf("%d", &choice);
 
