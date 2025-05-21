@@ -116,6 +116,48 @@ void viewUnits()
 
 }
 
+//implement view units from file
+void viewUnitsFromFile()
+{
+    FILE *fp = fopen("classes.txt", "r");
+    // check for empty file
+    if (fp == NULL) {
+        printf("No classes to display");
+        return;
+    }
+
+    // display units from file
+    struct Class temp;
+    int count = 0;
+
+    printf("\n======= Class List (From File) =======\n");
+
+    while (fscanf(fp, " %[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n",
+                    temp.title,
+                    temp.code,
+                    temp.day,
+                    temp.time,
+                    temp.venue,
+                    temp.lecturerName) == 6){
+                        count++;
+                        printf("\nUnits %d\n", count);
+                        printf("Title       :   %s\n", temp.title);
+                        printf("Code        :   %s\n", temp.code);
+                        printf("Day     :   %s\n",temp.day);
+                        printf("Time        :   %s\n", temp.time);
+                        printf("Venue       :   %s\n", temp.venue);
+                        printf("Lecturer        :   %s\n", temp.lecturerName);
+
+                    }
+
+                    fclose(fp);
+
+                    if (count == 0){
+                        printf("file is empty.\n");
+                    }
+
+}
+
 void editUnit()
 {
     if (classCount == 0){
@@ -171,16 +213,17 @@ void manageClasses()
     int choice;
     // Add units
     do {
-        printf("\n===== ClassHabibi =====\n");
-        printf("1. Add Unit\n2. View Units\n3. Edit Unit\n4. Delete Unit\n5. Back\n");
+        printf("\n===== EduTracker =====\n");
+        printf("\n1. Add Unit\n2. View Units(Live)\n3. View Units 4. Edit Unit\n 5. Delete Unit\n6. Back\n");
         printf("Choose an option: ");
         scanf("%d", &choice);
 
         switch(choice){
             case 1: addUnit(); break;
-            case 2: viewUnits(); break;
-            case 3: editUnit(); break;
-            case 4: deleteUnit(); break;
+            case 2: viewUnitsFromFile(); break;
+            case 3: viewUnits(); break;
+            case 4: editUnit(); break;
+            case 5: deleteUnit(); break;
         }
     } while (choice != 5);
    

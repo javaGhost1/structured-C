@@ -1,1 +1,2 @@
-Data Structures,COMP214,MON,10:00AM,LAB3,Daisy
+Data Structures in C,COMP312,MON,10:00AM,lab3,Daisy
+Algorithms,COMP120,Wednesday,8:00AM,RoomA,Prof.Otieno
