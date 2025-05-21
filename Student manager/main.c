@@ -13,7 +13,7 @@ struct Class
     char venue[20];
     char lecturerName[50];
 };
-struct Class class[MAX_CLASSES];
+struct Class classes[MAX_CLASSES];
 int classCount = 0;
 void addUnit()
 {
@@ -25,22 +25,24 @@ void addUnit()
 
     //Get class details
     printf("Unit Title: ");
-    scanf(" %[^\n]", class[classCount].title);
+    scanf(" %[^\n]", classes[classCount].title);
     // unit code
     printf("Unit Code: ");
-    scanf("%s", class[classCount].code);
+    scanf("%s", classes[classCount].code);
     // day
     printf("Day: ");
-    scanf("%s", class[classCount].day);
+    scanf("%s", classes[classCount].day);
     // time
     printf("Time: ");
-    scanf("%s", class[classCount].time);
+    scanf("%s", classes[classCount].time);
     // venue
     printf("Venue: ");
-    scanf("%s", class[classCount].venue);
+    scanf("%s", classes[classCount].venue);
     // lecturer
     printf("Lecturer Name: ");
-    scanf(" %[^\n]", class[classCount].lecturerName);
+    scanf(" %[^\n]", classes[classCount].lecturerName);
+
+    printf("Unit added successfully");
     classCount ++;
 }
 
@@ -48,7 +50,7 @@ void viewUnits()
 {
     // check if there are classes
     if (classCount == 0){
-        printf("No classes added");
+        printf("\nNo classes have been added yet\n");
         return;
     }
 
@@ -56,11 +58,11 @@ void viewUnits()
     printf("\n======= Class List =======\n");
     for (int i=0; i<classCount; i++){
         printf("\nClass %d\n", i+1);
-        printf("Title      : %s\n", class[i].title);
-        printf("Code       : %s\n", class[i].code);
-        printf("Schedule   : %s at %s\n", class[i].day, class[i].time);
-        printf("Venue      : %s\n", class[i].venue);
-        printf("Lecturer     : %s\n", class[i].lecturerName);
+        printf("Title       :   %s\n", classes[i].title);
+        printf("Code        :   %s\n", classes[i].code);
+        printf("Schedule    :   %s at %s\n", classes[i].day, classes[i].time);
+        printf("Venue       :   %s\n", classes[i].venue);
+        printf("Lecturer    :   %s\n", classes[i].lecturerName);
 
     }
 
