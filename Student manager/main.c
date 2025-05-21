@@ -15,6 +15,50 @@ struct Class
 };
 struct Class classes[MAX_CLASSES];
 int classCount = 0;
+
+void saveClassesToFile()
+{
+    FILE *fp = fopen("classes.txt", "w");
+    if (fp == NULL){
+        printf("Error opening file for writing.\n");
+        return;
+    }
+    for (int i=0; i < classCount; i++){
+        fprintf(fp, "%s,%s,%s,%s,%s,%s\n",
+            classes[i].title,
+            classes[i].code,
+            classes[i].day,
+            classes[i].time,
+            classes[i].venue,
+            classes[i].lecturerName);
+    }
+    fclose(fp);
+    printf("Classes saved to file.\n");
+}
+
+void loadClassesFromFile() 
+{
+    FILE *fp = fopen("classes.txt", "r");
+    if (fp == NULL) {
+        printf("No existing file to load (this is okay if it is your first time)");
+        return;
+    }
+
+    while (fscanf(fp, " %[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n",
+                classes[classCount].title,
+                classes[classCount].code,
+                classes[classCount].day,
+                classes[classCount].time,
+                classes[classCount].venue,
+                classes[classCount].lecturerName) == 6){
+            classCount++;
+            if (classCount >= MAX_CLASSES) break;
+        }
+        fclose(fp);
+        printf("Loaded %d classes from file.\n", classCount);
+}
+
+
 void addUnit()
 {
     // Check for added units
@@ -44,6 +88,9 @@ void addUnit()
 
     printf("Unit added successfully");
     classCount ++;
+
+    //auto save
+    saveClassesToFile();
 }
 
 void viewUnits()
@@ -108,6 +155,9 @@ void editUnit()
     scanf(" %[^\n]", classes[index].lecturerName);
 
     printf("Class updated successfully");
+
+    // autosave
+    saveClassesToFile();
 }
 
 void deleteUnit()
@@ -140,6 +190,8 @@ void manageClasses()
 
 int main()
 {
+    loadClassesFromFile();
     manageClasses();
+    saveClassesToFile();
     return 0;
 }
