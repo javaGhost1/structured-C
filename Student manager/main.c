@@ -71,7 +71,43 @@ void viewUnits()
 
 void editUnit()
 {
-    printf("Edit Unit details");
+    if (classCount == 0){
+        printf("No classes to edit");
+        return;
+    }
+
+    int index;
+    printf("Enter class number to edit (1-%d)", classCount);
+    scanf("%d", &index);
+
+    if (index < 1 || index > classCount){
+        printf("Invalid class number\n");
+        return;
+    }
+
+    index--; // conver to zero based
+
+    printf("\nEditing class: %s (%s)\n", classes[index].title, classes[index].code);
+
+    printf("New Unit Title: ");
+    scanf(" %[^\n]", classes[index].title);
+
+    printf("New Unit code: ");
+    scanf(" %s", classes[index].code);
+
+    printf("New Day: ");
+    scanf("%s", classes[index].day);
+
+    printf("New Time: ");
+    scanf("%s", classes[index].time);
+
+    printf("New Venue: ");
+    scanf("%s", classes[index].venue);
+
+    printf("New lecturer");
+    scanf(" %[^\n]", classes[index].lecturerName);
+
+    printf("Class updated successfully");
 }
 
 void deleteUnit()
